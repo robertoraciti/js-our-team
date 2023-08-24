@@ -58,6 +58,8 @@ for (const employe in team) {
     <tr>
       <td>${team[employe].name}</td>
       <td>${team[employe].role}</td>
-      <td>${team[employe].photo}</td>
+      <td>
+        <img src='./img/${team[employe].photo}'>
+      </td>
     </tr>`;
 }
