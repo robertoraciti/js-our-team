@@ -12,6 +12,7 @@
 // Organizzare i singoli membri in card/schede
 
 const dataContainer = document.getElementById("data-container");
+const cardContainer = document.getElementById("card-container");
 
 const team = [
   {
@@ -52,14 +53,24 @@ for (const employe in team) {
   console.log(
     team[employe].name + " " + team[employe].role + " " + team[employe].photo
   );
-  dataContainer.innerHTML += `<table class="table">
-
+  dataContainer.innerHTML += `
+  <table class="table">
   <tbody>
     <tr>
-      <td>${team[employe].name}</td>
+      <td class= 'w-25'>${team[employe].name}</td>
       <td>${team[employe].role}</td>
-      <td>
+      <td class= 'w-25'>
         <img src='./img/${team[employe].photo}'>
       </td>
     </tr>`;
+
+  cardContainer.innerHTML += `
+    <div class="card mb-4" style="width: 18rem;">
+        <img src='./img/${team[employe].photo}'>
+        <div class="card-body">
+            <h5 class="card-title">${team[employe].name}</h5>
+            <p class="card-text">${team[employe].role}</p>
+  </div>
+</div>
+    `;
 }
